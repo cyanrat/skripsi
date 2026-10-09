@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run StatSkripsi locally",
+			"type": "shell",
+			"command": "C:\\Program Files\\R\\R-4.6.1\\bin\\Rscript.exe",
+			"args": [
+				"-e",
+				"shiny::runApp(port=3839, launch.browser=FALSE)"
+			],
+			"options": {
+				"cwd": "e:\\Works\\StatSkripsi"
+			},
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check git and GitHub CLI",
+			"type": "shell",
+			"command": "Get-Command git,gh -ErrorAction SilentlyContinue | Select-Object Name,Source; Get-ChildItem -Force | Select-Object Name,Mode; Get-ChildItem -Force .\\data | Select-Object Name,Mode",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize and commit StatSkripsi",
+			"type": "shell",
+			"command": "git init; git add .gitignore README.md app.R data/contoh.csv .vscode/tasks.json; git status --short; git commit -m \"Initial commit: StatSkripsi data analysis app\"",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
